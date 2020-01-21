@@ -1,8 +1,25 @@
+{% load static %}
 <html>
 <head>
-  <title> Home page - myWebsite </title>
-</head>
+<title>Login Form</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 <body>
-  <p align = "center"> <h3> Ciao Lmao </h3>
+    <div class="loginbox">
+    <img src="{% static 'avatar.jpg' %}" class="avatar">
+        <h1>Accedi a -SiteName-</h1>
+        <form method = "POST" action = "../page/">
+            {% csrf_token %}
+            <p>Username</p>
+            <input type="text" name="username" placeholder="Inserisci il tuo username">
+            <p>Password</p>
+            <input type="password" name="password" placeholder="Digita la password">
+            <input type="submit" name="submit"  value="Login" >
+            <a href="#">Hai perso la password?</a><br>
+            <a href="#">Non hai un account? Registrati</a>
+        </form>
+
+    </div>
+
 </body>
+</head>
 </html>
